@@ -45,6 +45,7 @@ case "$1" in
 				mkdir -p $HOME/ircd/unreal
 				echo "Creating temporary directory(s)"
 				mkdir -p $TMPDIR/$USER/src
+				chmod -R 0700 $TMPDIR/$USER
 				cd $TMPDIR/$USER/src
 				wget -q --no-check-certificate https://www.unrealircd.org/downloads/unrealircd-latest.tar.gz
 				if [ ! -f "unrealircd-latest.tar.gz" ]

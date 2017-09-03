@@ -45,6 +45,7 @@ case "$1" in
 				mkdir -p $HOME/services/anope
 				echo "Creating temporary directory(s)"
 				mkdir -p $TMPDIR/$USER/src
+				chmod -R 0700 $TMPDIR/$USER
 				cd $TMPDIR/$USER/src
 				wget -q https://github.com/anope/anope/releases/download/2.0.5/anope-2.0.5-source.tar.gz
 				if [ ! -f "anope-2.0.5-source.tar.gz" ]

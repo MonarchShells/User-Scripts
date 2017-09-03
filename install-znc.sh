@@ -45,6 +45,7 @@ case "$1" in
 				mkdir -p $HOME/ircd/znc
 				echo "Creating temporary directory(s)"
 				mkdir -p $TMPDIR/$USER/src
+				chmod -R 0700 $TMPDIR/$USER
 				cd $TMPDIR/$USER/src
 				wget -q https://znc.in/releases/znc-1.6.5.tar.gz
 				if [ ! -f "znc-1.6.5.tar.gz" ]

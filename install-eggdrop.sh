@@ -43,6 +43,7 @@ case "$1" in
 				rm -rf $HOME/bots/eggdrop
 				echo "Creating temporary directory(s)"
 				mkdir -p $TMPDIR/$USER/src
+				chmod -R 0700 $TMPDIR/$USER
 				cd $TMPDIR/$USER/src
 				echo "Downloading Eggdrop 1.8"
 				wget -q ftp://ftp.eggheads.org/pub/eggdrop/source/eggdrop1.8-latest.tar.gz

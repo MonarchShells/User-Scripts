@@ -45,6 +45,7 @@ case "$1" in
 				mkdir -p $HOME/ircd/inspircd
 				echo "Creating temporary directory(s)"
 				mkdir -p $TMPDIR/$USER/src
+				chmod -R 0700 $TMPDIR/$USER
 				cd $TMPDIR/$USER/src
 				wget -q https://github.com/inspircd/inspircd/archive/v2.0.24.tar.gz
 				if [ ! -f "v2.0.24.tar.gz" ]

@@ -47,6 +47,7 @@ case "$1" in
 				mkdir -p $HOME/bots/limnoria
 				echo "Creating temporary directory(s)"
 				mkdir -p $TMPDIR/$USER/src/limnoria
+				chmod -R 0700 $TMPDIR/$USER
 				cd $TMPDIR/$USER/src
 				echo "Installing dependencies for Limnoria"
 				pip install -r https://raw.githubusercontent.com/ProgVal/Limnoria/master/requirements.txt --user --upgrade

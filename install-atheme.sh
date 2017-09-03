@@ -45,6 +45,7 @@ case "$1" in
 				mkdir -p $HOME/services/atheme
 				echo "Creating temporary directory(s)"
 				mkdir -p $TMPDIR/$USER/src
+				chmod -R 0700 $TMPDIR/$USER
 				cd $TMPDIR/$USER/src
 				wget -q https://github.com/atheme/atheme/releases/download/v7.2.9/atheme-7.2.9.tar.bz2
 				if [ ! -f "atheme-7.2.9.tar.bz2" ]
