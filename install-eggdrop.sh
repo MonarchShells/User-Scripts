@@ -45,7 +45,7 @@ case "$1" in
 				mkdir -p $TMPDIR/$USER/src/eggdrop
 				cd $TMPDIR/$USER/src
 				echo "Downloading Eggdrop 1.8"
-				wget ftp://ftp.eggheads.org/pub/eggdrop/source/eggdrop1.8-latest.tar.gz 2>&1 /dev/null
+				wget ftp://ftp.eggheads.org/pub/eggdrop/source/eggdrop1.8-latest.tar.gz 2>&1 >/dev/null
 				if [ ! -f "eggdrop1.8-latest.tar.gz" ]
 				then
 					echo "Download failed, dropping you back to your shell"
