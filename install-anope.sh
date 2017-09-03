@@ -65,6 +65,9 @@ case "$1" in
 					echo "EXTRA_LIB_DIRS=\"\"" >>config.cache
 					echo "EXTRA_CONFIG_ARGS=\"\"" >>config.cache
 					./Config -quick
+					cd build
+					make -j$(nproc)
+					make install
 				fi
 				echo "All done, cleaning up"
 				echo "Anope is now installed! You can find it in $HOME/services/anope"
