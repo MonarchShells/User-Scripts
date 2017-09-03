@@ -22,10 +22,10 @@ case "$1" in
 			help)
 				case "$2" in
 					install)
-						echo "Installs Eggdrop into ~/bots/eggdrop"
+						echo "Installs Atheme into ~/services/atheme"
 						;;
 					remove)
-						echo "Removes eggdrop"
+						echo "Removes Atheme"
 						;;
 					help)
 						echo "You obviously know how the help function works"
@@ -34,41 +34,41 @@ case "$1" in
 				;;
 			install)
 				echo "I'm running as $USER on $HOSTNAME"
-				echo "Will install Eggdrop to $HOME/bots/eggdrop"
+				echo "Will install Atheme to $HOME/services/atheme"
 				echo "Erasing old temporary directory"
 				rm -rf $TMPDIR/$USER
-				echo "Creating directory $HOME/bots"
-				mkdir -p $HOME/bots
-				echo "Erasing old versions of eggdrop"
-				rm -rf $HOME/bots/eggdrop
+				echo "Creating directory $HOME/services"
+				mkdir -p $HOME/services
+				echo "Erasing old versions of Atheme"
+				rm -rf $HOME/services/atheme
+				echo "Creating Atheme directory"
+				mkdir -p $HOME/services/atheme
 				echo "Creating temporary directory(s)"
 				mkdir -p $TMPDIR/$USER/src
 				cd $TMPDIR/$USER/src
-				echo "Downloading Eggdrop 1.8"
-				wget -q ftp://ftp.eggheads.org/pub/eggdrop/source/eggdrop1.8-latest.tar.gz
-				if [ ! -f "eggdrop1.8-latest.tar.gz" ]
+				wget -q https://github.com/atheme/atheme/releases/download/v7.2.9/atheme-7.2.9.tar.bz2
+				if [ ! -f "atheme-7.2.9.tar.bz2" ]
 				then
 					echo "Download failed, dropping you back to your shell"
 					cd $HOME
 					rm -rf $TMPDIR/$USER
 					exit
 				else
-					tar xf eggdrop1.8-latest.tar.gz
-					cd eggdrop-1.8*
-					./configure
-					make config -j$(nproc)
+					tar xf atheme-7.2.9.tar.bz2
+					cd atheme-*
+					./configure --prefix=$HOME/services/atheme
 					make -j$(nproc)
-					make install DEST=$HOME/bots/eggdrop
-					echo "All done, cleaning up"
-					echo "Eggdrop is now installed! You can find it in $HOME/bots/eggdrop"
-					cd $HOME
-					rm -rf $TMPDIR/$USER
-					exit
+					make install
 				fi
+				echo "All done, cleaning up"
+				echo "Atheme is now installed! You can find it in $HOME/services/atheme"
+				cd $HOME
+				rm -rf $TMPDIR/$USER
+				exit
 				;;
 			remove)
-				echo "Removing Eggdrop"
-				rm -rf $HOME/bots/eggdrop
+				echo "Removing Atheme"
+				rm -rf $HOME/services/atheme
 				echo "All done"
 				exit
 				;;
