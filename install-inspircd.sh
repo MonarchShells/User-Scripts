@@ -1,9 +1,9 @@
 #!/bin/bash
 #
-# Copyright (C) 2Pro International Limited - All Rights Reserved
+# Copyright (C) Monarch Solutions - All Rights Reserved
 # Unauthorized copying of this file, via any medium is strictly prohibited
 # If you wish to use these scripts for yourself, please contact the author
-# Written by Theo Morra <theo@2pro.international>, September 2017
+# Written by Theo Morra <tmorra@gomonar.ch>, September 2017
 #
 export TMPDIR=/tmp
 function ctrlc() {

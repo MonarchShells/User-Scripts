@@ -1,9 +1,9 @@
 #!/bin/bash
 #
-# Copyright (C) 2Pro International Limited - All Rights Reserved
+# Copyright (C) Monarch Solutions - All Rights Reserved
 # Unauthorized copying of this file, via any medium is strictly prohibited
 # If you wish to use these scripts for yourself, please contact the author
-# Written by Theo Morra <theo@2pro.international>, September 2017
+# Written by Theo Morra <tmorra@gomonar.ch>, September 2017
 #
 case "$1" in
 			help)
@@ -20,36 +20,42 @@ case "$1" in
 					help)
 						echo "You obviously know how the help function works"
 						;;
+          deploy)
+            echo "Deploys services (due to provisioning this could take up to 5 minutes)"
+            ;;
 				esac
 				;;
-			install)
+			deploy)
           case "$2" in
             anope)
-              /var/xpro/apps/install-anope.sh install
+              /var/monarch/apps/install-anope.sh install
               ;;
             atheme)
-              /var/xpro/apps/install-atheme.sh install
+              /var/monarch/apps/install-atheme.sh install
               ;;
             charybdis)
-              /var/xpro/apps/install-charybdis.sh install
+              /var/monarch/apps/install-charybdis.sh install
               ;;
             eggdrop)
-              /var/xpro/apps/install-eggdrop.sh install
+              /var/monarch/apps/install-eggdrop.sh install
               ;;
             inspircd)
-              /var/xpro/apps/install-inspircd.sh install
+              /var/monarch/apps/install-inspircd.sh install
               ;;
             limnoria)
-              /var/xpro/apps/install-limnoria.sh install
+              /var/monarch/apps/install-limnoria.sh install
               ;;
             unreal)
-              /var/xpro/apps/install-unreal.sh install
+              /var/monarch/apps/install-unreal.sh install
               ;;
             znc)
-              /var/xpro/apps/install-znc.sh install
+              /var/monarch/apps/install-znc.sh install
+              ;;
+            www)
+              echo "DO NOT REMOVE ME" > $HOME/.www
               ;;
             *)
-              echo "Available packages: anope, atheme, charybdis, eggdrop, inspircd, limnoria, unreal, znc"
+              echo "Available deployable packages: anope, atheme, charybdis, eggdrop, inspircd, limnoria, unreal, znc, www"
               exit
               ;;
           esac
@@ -57,41 +63,42 @@ case "$1" in
 			remove)
 				case "$2" in
           anope)
-            /var/xpro/apps/install-anope.sh remove
+            /var/monarch/apps/install-anope.sh remove
             ;;
           atheme)
-            /var/xpro/apps/install-atheme.sh remove
+            /var/monarch/apps/install-atheme.sh remove
             ;;
           charybdis)
-            /var/xpro/apps/install-charybdis.sh remove
+            /var/monarch/apps/install-charybdis.sh remove
             ;;
           eggdrop)
-            /var/xpro/apps/install-eggdrop.sh remove
+            /var/monarch/apps/install-eggdrop.sh remove
             ;;
           inspircd)
-            /var/xpro/apps/install-inspircd.sh remove
+            /var/monarch/apps/install-inspircd.sh remove
             ;;
           limnoria)
-            /var/xpro/apps/install-limnoria.sh remove
+            /var/monarch/apps/install-limnoria.sh remove
             ;;
           unreal)
-            /var/xpro/apps/install-unreal.sh remove
+            /var/monarch/apps/install-unreal.sh remove
             ;;
           znc)
-            /var/xpro/apps/install-znc.sh remove
+            /var/monarch/apps/install-znc.sh remove
+            ;;
+          www)
+            rm -rf $HOME/.www
             ;;
           *)
-            echo "Available packages: anope, atheme, charybdis, eggdrop, inspircd, limnoria, unreal, znc"
+            echo "Available packages: anope, atheme, charybdis, eggdrop, inspircd, limnoria, unreal, znc, www"
             exit
             ;;
         esac
 				;;
       list)
-        echo "Available packages: anope, atheme, charybdis, eggdrop, inspircd, limnoria, unreal, znc"
-        exit
+        echo "Available packages: anope, atheme, charybdis, eggdrop, inspircd, limnoria, unreal, znc, www"
         ;;
 			*)
-				echo "Usage: $0 {install <package>|remove <package>|help <command>|list}"
-				exit
+				echo "Usage: $0 {deploy <package>|remove <package>|help <command>|list}"
 				;;
 esac
