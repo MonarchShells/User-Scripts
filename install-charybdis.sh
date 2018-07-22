@@ -58,7 +58,7 @@ case "$1" in
 					tar xf charybdis-3.5.5.tar.gz
 					cd charybdis-charybdis-*
 					./configure --enable-openssl --enable-ipv6 --with-nicklen=20 --with-topiclen=420 --prefix=$HOME/ircd/charybdis
-					make -j$(nproc)
+					make -j2
 					make install
 				fi
 				echo "All done, cleaning up"

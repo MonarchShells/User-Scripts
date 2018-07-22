@@ -58,7 +58,7 @@ case "$1" in
 					tar xf znc-1.6.5.tar.gz
 					cd znc-*
 					./configure --prefix=$HOME/ircd/znc
-					make -j$(nproc)
+					make -j2
 					make install
 				fi
 				echo "All done, cleaning up"

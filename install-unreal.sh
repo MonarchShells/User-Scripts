@@ -88,7 +88,7 @@ case "$1" in
 					ADVANCED=""
 EOD
 					./Config -quick
-					make -j$(nproc)
+					make -j2
 					make install
 				fi
 				echo "All done, cleaning up"

@@ -58,8 +58,8 @@ case "$1" in
 					tar xf v2.0.24.tar.gz
 					cd inspircd-*
 					./configure --enable-extras=m_ssl_gnutls.cpp
-					./configure ./configure --enable-gnutls --enable-epoll --prefix=$HOME/ircd/inspircd --config-dir=$HOME/ircd/inspircd/conf --log-dir=$HOME/ircd/inspircd/logs --data-dir=$HOME/ircd/inspircd/data --module-dir=$HOME/ircd/inspircd/modules --binary-dir=$HOME/ircd/inspircd/bin
-					make -j$(nproc)
+					./configure --enable-gnutls --enable-epoll --prefix=$HOME/ircd/inspircd --config-dir=$HOME/ircd/inspircd/conf --log-dir=$HOME/ircd/inspircd/logs --data-dir=$HOME/ircd/inspircd/data --module-dir=$HOME/ircd/inspircd/modules --binary-dir=$HOME/ircd/inspircd/bin
+					make -j2
 					make install
 				fi
 				echo "All done, cleaning up"

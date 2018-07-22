@@ -57,8 +57,8 @@ case "$1" in
 					tar xf eggdrop1.8-latest.tar.gz
 					cd eggdrop-1.8*
 					./configure
-					make config -j$(nproc)
-					make -j$(nproc)
+					make config -j2
+					make -j$2
 					make install DEST=$HOME/bots/eggdrop
 					echo "All done, cleaning up"
 					echo "Eggdrop is now installed! You can find it in $HOME/bots/eggdrop"

@@ -58,7 +58,7 @@ case "$1" in
 					tar xf atheme-7.2.9.tar.bz2
 					cd atheme-*
 					./configure --prefix=$HOME/services/atheme
-					make -j$(nproc)
+					make -j2
 					make install
 				fi
 				echo "All done, cleaning up"

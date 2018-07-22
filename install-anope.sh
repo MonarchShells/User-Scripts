@@ -67,7 +67,7 @@ case "$1" in
 					echo "EXTRA_CONFIG_ARGS=\"\"" >>config.cache
 					./Config -quick
 					cd build
-					make -j$(nproc)
+					make -j2
 					make install
 				fi
 				echo "All done, cleaning up"

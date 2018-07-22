@@ -52,6 +52,10 @@ case "$1" in
               /var/monarch/apps/install-znc.sh install
               ;;
             www)
+              echo "I'm running as $USER on $HOSTNAME"
+              echo "Will provision HTTP vHost"
+              rm -rf $HOME/.www
+              echo "All done, cleaning up"
               echo "DO NOT REMOVE ME" > $HOME/.www
               ;;
             *)
@@ -87,7 +91,10 @@ case "$1" in
             /var/monarch/apps/install-znc.sh remove
             ;;
           www)
+            echo "I'm running as $USER on $HOSTNAME"
+				    echo "Will deprovision HTTP vHost"
             rm -rf $HOME/.www
+            echo "All done, cleaning up"
             ;;
           *)
             echo "Available packages: anope, atheme, charybdis, eggdrop, inspircd, limnoria, unreal, znc, www"
