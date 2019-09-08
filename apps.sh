@@ -3,7 +3,7 @@
 # Copyright (C) Monarch Solutions - All Rights Reserved
 # Unauthorized copying of this file, via any medium is strictly prohibited
 # If you wish to use these scripts for yourself, please contact the author
-# Written by Theo Morra <tmorra@gomonar.ch>, September 2017
+# Written by Theo Morra <https://github.com/td512>, September 2017
 #
 case "$1" in
 			help)
